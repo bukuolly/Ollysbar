@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oliver's Sports Bar &amp; Restaurant — Swansea</title>
+<meta name="description" content="Oliver's Sports Bar &amp; Restaurant — 1070 Carmarthen Rd, Fforest-fach, Swansea. Pub grub, live sports, great atmosphere. Call 01792 731092.">
+<meta name="keywords" content="Oliver's Sports Bar Swansea, pub grub Swansea, sports bar Swansea, restaurant Swansea">
+<meta property="og:title" content="Oliver's Sports Bar &amp; Restaurant — Swansea">
+<meta property="og:description" content="Pub grub, live sports and great atmosphere in Swansea.">
+<meta property="og:type" content="restaurant">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BarOrPub","name":"Oliver's Sports Bar & Restaurant","description":"Pub grub and sports bar in Swansea.","servesCuisine":["British","Pub Grub"],"priceRange":"££","address":{"@type":"PostalAddress","streetAddress":"1070 Carmarthen Rd, Fforest-fach","addressLocality":"Swansea","postalCode":"SA5 4AL","addressCountry":"GB"},"telephone":"01792731092","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Sunday"],"opens":"12:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"12:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"00:00"}]}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0A0A0A;
+  --teal:#5B9E8F;
+  --teal-dark:#1E3D38;
+  --teal-light:#7BBCB0;
+  --gold:#C8A84B;
+  --white:#FFFFFF;
+  --off-white:#F7F7F5;
+  --light-grey:#EFEFED;
+  --mid-grey:#888;
+  --text:#1a1a1a;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:70px;padding:0 2.5rem;
+  background:var(--black);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{height:44px;width:44px;border-radius:50%;object-fit:cover;filter:invert(1);opacity:0.92;}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.8rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--teal-light);}
+.nav-cta{background:var(--teal)!important;color:var(--white)!important;padding:0.45rem 1.1rem;border-radius:2px;opacity:1!important;}
+.nav-cta:hover{background:var(--teal-light)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--black);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;}
+.mob-menu.open{display:flex;}
+.mob-menu a{color:var(--white);text-decoration:none;font-family:'Anton',sans-serif;font-size:2.2rem;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s;}
+.mob-menu a:hover{color:var(--teal-light);}
+.mob-cta{background:var(--teal);color:var(--white)!important;padding:0.7rem 2rem;border-radius:2px;font-size:1.4rem!important;}
+@media(max-width:860px){.nav-links{display:none;}.hamburger{display:flex;}}
+
+/* HERO */
+#hero{
+  position:relative;height:100vh;min-height:580px;
+  margin-top:70px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-img{
+  position:absolute;inset:0;
+  background-image:url('hero.jpeg');
+  background-size:cover;background-position:center;
+  filter:brightness(0.42);
+  transform:scale(1.04);
+  transition:transform 8s ease;
+}
+#hero:hover .hero-img{transform:scale(1);}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 1.5rem;}
+.hero-tag{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.3);padding:0.4rem 1.2rem;border-radius:1px;margin-bottom:1.4rem;}
+.hero-title{font-family:'Anton',sans-serif;font-size:clamp(3.2rem,9vw,7.5rem);line-height:0.95;letter-spacing:0.02em;text-transform:uppercase;color:var(--white);margin-bottom:0.6rem;}
+.hero-title span{color:var(--teal-light);}
+.hero-sub{font-size:clamp(1rem,2.5vw,1.3rem);font-weight:300;color:rgba(255,255,255,0.75);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:2.2rem;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--teal);color:var(--white);padding:0.85rem 2.2rem;border-radius:2px;text-decoration:none;font-weight:700;font-size:0.82rem;letter-spacing:0.14em;text-transform:uppercase;transition:all 0.2s;}
+.btn-primary:hover{background:var(--teal-light);}
+.btn-outline{border:1px solid rgba(255,255,255,0.45);color:var(--white);padding:0.85rem 2.2rem;border-radius:2px;text-decoration:none;font-weight:600;font-size:0.82rem;letter-spacing:0.14em;text-transform:uppercase;transition:all 0.2s;}
+.btn-outline:hover{border-color:var(--teal-light);color:var(--teal-light);}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0.45;}
+.hero-scroll span{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--white),transparent);animation:scrollPulse 2s ease infinite;}
+@keyframes scrollPulse{0%,100%{opacity:0.3}50%{opacity:1}}
+
+/* STRIP */
+.strip{background:var(--black);padding:1.1rem 2.5rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;}
+.strip-item{display:flex;align-items:center;gap:0.6rem;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.65);}
+.strip-item svg{width:18px;height:18px;stroke:var(--teal-light);flex-shrink:0;}
+
+/* SECTION COMMONS */
+.section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:0.8rem;}
+.section-title{font-family:'Anton',sans-serif;font-size:clamp(2rem,5vw,3.2rem);text-transform:uppercase;color:var(--black);line-height:1.05;}
+.section-head{text-align:center;margin-bottom:3.5rem;}
+.section-head .section-title{color:var(--black);}
+
+/* ABOUT */
+#about{padding:6rem 5%;background:#F0EFED;}
+.about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.about-img-wrap{position:relative;}
+.about-img-main{width:100%;height:480px;object-fit:cover;border-radius:2px;display:block;position:relative;}
+.about-img-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);border-radius:2px;}
+.about-img-badge{position:absolute;bottom:-1.5rem;right:-1.5rem;background:var(--teal);color:var(--white);padding:1.2rem 1.5rem;border-radius:2px;text-align:center;}
+.about-img-badge strong{display:block;font-family:'Anton',sans-serif;font-size:2rem;line-height:1;color:var(--white);}
+.about-img-badge span{font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;}
+.about-title{font-family:'Anton',sans-serif;font-size:clamp(2rem,4vw,3rem);line-height:1.05;text-transform:uppercase;color:var(--black);margin-bottom:1.4rem;}
+.about-text{font-size:1rem;font-weight:400;line-height:1.75;color:#444;margin-bottom:2rem;}
+.about-feats{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;}
+.about-feat{display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;font-weight:500;color:#333;}
+.about-feat svg{width:16px;height:16px;stroke:var(--teal);flex-shrink:0;}
+@media(max-width:860px){.about-inner{grid-template-columns:1fr;gap:3rem;}.about-img-badge{right:1rem;bottom:1rem;}}
+
+/* MENU */
+#menu{padding:6rem 5%;background:#E8F2F0;}
+#menu .section-head .section-label{color:var(--teal);}
+#menu .section-head .section-title{color:var(--black);}
+.menu-tabs{display:flex;justify-content:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:3rem;}
+.menu-tab{background:none;border:1px solid rgba(91,158,143,0.3);color:#555;padding:0.55rem 1.4rem;border-radius:2px;font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
+.menu-tab.active,.menu-tab:hover{background:var(--teal);border-color:var(--teal);color:var(--white);}
+.menu-panel{display:none;max-width:1000px;margin:0 auto;}
+.menu-panel.active{display:block;}
+.menu-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
+.menu-category{background:var(--white);border:1px solid rgba(91,158,143,0.15);border-radius:2px;padding:2rem;}
+.menu-cat-title{font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--black);padding-bottom:0.8rem;margin-bottom:1.2rem;border-bottom:2px solid var(--teal);}
+.menu-item{padding:0.7rem 0;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;}
+.menu-item:last-child{border-bottom:none;}
+.menu-item-left{flex:1;}
+.menu-item-name{font-size:0.92rem;font-weight:600;color:var(--black);margin-bottom:0.2rem;}
+.menu-item-desc{font-size:0.78rem;font-weight:400;color:#777;line-height:1.4;}
+.menu-item-price{font-size:0.88rem;font-weight:700;color:var(--teal);white-space:nowrap;flex-shrink:0;}
+.menu-note{text-align:center;margin-top:2rem;font-size:0.82rem;color:#888;font-style:italic;}
+
+/* SPORTS */
+#sports{padding:6rem 5%;background:#F0EFED;}
+.sports-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.sports-content .section-label{text-align:left;}
+.sports-content .section-title{text-align:left;color:var(--black);margin-bottom:1.2rem;}
+.sports-text{font-size:1rem;font-weight:400;line-height:1.75;color:#444;margin-bottom:2rem;}
+.sports-list{list-style:none;display:flex;flex-direction:column;gap:0.8rem;}
+.sports-list li{display:flex;align-items:center;gap:0.8rem;font-size:0.9rem;font-weight:500;color:#333;}
+.sports-list svg{width:18px;height:18px;stroke:var(--gold);flex-shrink:0;}
+.sports-img{width:100%;height:420px;object-fit:cover;border-radius:2px;}
+@media(max-width:860px){.sports-inner{grid-template-columns:1fr;gap:3rem;}}
+
+/* GALLERY */
+#gallery{padding:6rem 5%;background:var(--white);}
+.gallery-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0.6rem;}
+.gallery-item{overflow:hidden;border-radius:1px;cursor:pointer;aspect-ratio:1;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;display:block;}
+.gallery-item:hover img{transform:scale(1.06);}
+@media(max-width:700px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* LIGHTBOX */
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:2000;align-items:center;justify-content:center;}
+.lb.open{display:flex;}
+.lb img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:2px;}
+.lb-close{position:absolute;top:1.2rem;right:1.5rem;background:none;border:none;color:var(--white);font-size:2rem;cursor:pointer;opacity:0.7;transition:opacity 0.2s;}
+.lb-close:hover{opacity:1;}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--white);font-size:2.5rem;cursor:pointer;padding:1rem;opacity:0.6;transition:opacity 0.2s;}
+.lb-prev:hover,.lb-next:hover{opacity:1;}
+.lb-prev{left:1rem;}.lb-next{right:1rem;}
+
+/* REVIEWS */
+#reviews{padding:5rem 5%;background:var(--white);}
+.reviews-inner{max-width:900px;margin:0 auto;text-align:center;}
+.reviews-scores{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-bottom:3rem;}
+.review-score{display:flex;flex-direction:column;align-items:center;gap:0.5rem;}
+.review-score-platform{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#999;}
+.review-score-number{font-family:'Anton',sans-serif;font-size:3.5rem;line-height:1;color:var(--black);}
+.review-score-stars{display:flex;gap:3px;}
+.review-score-stars svg{width:18px;height:18px;fill:var(--gold);stroke:none;}
+.review-score-count{font-size:0.8rem;color:#888;}
+.reviews-divider{width:1px;height:80px;background:#e0e0e0;align-self:center;}
+.reviews-quote{font-size:1.05rem;font-weight:300;line-height:1.8;color:#555;font-style:italic;max-width:600px;margin:0 auto;}
+
+/* CONTACT */
+#contact{padding:6rem 5%;background:#E8F2F0;}
+#contact .section-label{color:var(--teal);}
+#contact .section-title{color:var(--black);}
+.contact-inner{max-width:1100px;margin:0 auto;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:3rem;}
+.contact-img{width:100%;height:340px;object-fit:cover;border-radius:2px;display:block;}
+.contact-details{display:flex;flex-direction:column;gap:0;}
+.contact-detail{display:flex;align-items:flex-start;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(91,158,143,0.15);}
+.contact-detail:last-of-type{border-bottom:none;}
+.contact-detail svg{width:20px;height:20px;stroke:var(--teal);flex-shrink:0;margin-top:2px;}
+.contact-detail-text h4{font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#999;margin-bottom:0.2rem;}
+.contact-detail-text p,.contact-detail-text a{font-size:0.92rem;font-weight:500;color:var(--text);text-decoration:none;line-height:1.5;}
+.contact-detail-text a:hover{color:var(--teal);}
+.contact-social{display:flex;gap:0.8rem;margin-top:1.5rem;flex-wrap:wrap;}
+.contact-social a{display:inline-flex;align-items:center;gap:0.5rem;background:var(--white);border:1px solid rgba(91,158,143,0.25);padding:0.55rem 1.1rem;border-radius:2px;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#444;text-decoration:none;transition:all 0.2s;}
+.contact-social a:hover{border-color:var(--teal);color:var(--teal);}
+.contact-social svg{width:15px;height:15px;stroke:currentColor;}
+.map-wrap{border-radius:2px;overflow:hidden;height:300px;border:1px solid rgba(91,158,143,0.2);}
+.map-wrap iframe{width:100%;height:100%;border:none;}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:2.5rem;}.contact-img{height:240px;}}
+
+/* FOOTER */
+footer{background:var(--black);padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-logo{height:36px;width:36px;border-radius:50%;object-fit:cover;filter:invert(1);opacity:0.6;}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.35);letter-spacing:0.08em;}
+.footer-links{display:flex;gap:1.5rem;}
+.footer-links a{font-size:0.75rem;color:rgba(255,255,255,0.35);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
+.footer-links a:hover{color:var(--teal-light);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img class="nav-logo" src="logo.jpeg" alt="Oliver's Sports Bar">
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#sports">Sports</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact" class="nav-cta">Find Us</a></li>
+  </ul>
+  <div class="hamburger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#menu" onclick="closeMob()">Menu</a>
+  <a href="#sports" onclick="closeMob()">Sports</a>
+  <a href="#gallery" onclick="closeMob()">Gallery</a>
+  <a href="#contact" class="mob-cta" onclick="closeMob()">Find Us</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-img"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Pub Grub &amp; Sports Bar — Fforest-fach, Swansea</div>
+    <h1 class="hero-title">Oliver's<br><span>Sports Bar</span></h1>
+    <p class="hero-sub">Great food &middot; Live sport &middot; Real atmosphere</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary">See The Menu</a>
+      <a href="#contact" class="btn-outline">Find Us</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+    <span><strong>Pub</strong> Grub</span>
+  </div>
+  <div class="strip-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+    <span><strong>Live</strong> Sports</span>
+  </div>
+  <div class="strip-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+    <span><strong>Dine</strong> In</span>
+  </div>
+  <div class="strip-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <span><strong>Group</strong> Bookings</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap reveal">
+      <img class="about-img-main" src="food-curry-pizza.jpeg" alt="Food at Oliver's">
+      <div class="about-img-overlay"></div>
+      <div class="about-img-badge">
+        <strong>Great</strong>
+        <span>Value Food</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="section-label">Welcome to Oliver's</p>
+      <h2 class="about-title">Your Local Sports Bar &amp; Kitchen</h2>
+      <p class="about-text">Oliver's is Swansea's home for hearty pub grub and live sport. Whether you're after a classic fish &amp; chips, a sizzling mixed grill or a proper curry, we've got you covered — all served in a relaxed, friendly atmosphere with the big games always showing.</p>
+      <div class="about-feats">
+        <div class="about-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Homemade Pub Classics</span></div>
+        <div class="about-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Live Sport on Big Screens</span></div>
+        <div class="about-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Steaks &amp; Grills</span></div>
+        <div class="about-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Friendly Local Atmosphere</span></div>
+        <div class="about-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Curries &amp; Pub Grub</span></div>
+        <div class="about-feat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Group Bookings Welcome</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="section-head reveal">
+    <p class="section-label">What We Serve</p>
+    <h2 class="section-title">Our Menu</h2>
+  </div>
+  <div class="menu-tabs">
+    <button class="menu-tab active" onclick="showMenu('starters')">Starters</button>
+    <button class="menu-tab" onclick="showMenu('mains')">Mains</button>
+    <button class="menu-tab" onclick="showMenu('grill')">From The Grill</button>
+    <button class="menu-tab" onclick="showMenu('burgers')">Burgers</button>
+    <button class="menu-tab" onclick="showMenu('kids')">Kids</button>
+    <button class="menu-tab" onclick="showMenu('desserts')">Desserts</button>
+  </div>
+
+  <!-- STARTERS -->
+  <div class="menu-panel active" id="panel-starters">
+    <div class="menu-cols">
+      <div class="menu-category">
+        <div class="menu-cat-title">Starters</div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Garlic Mushrooms</div></div><div class="menu-item-price">£3.50</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Garlic Bread</div></div><div class="menu-item-price">£2.50</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cheesy Garlic Bread</div></div><div class="menu-item-price">£3.50</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chips</div><div class="menu-item-desc">Add cheese for £1</div></div><div class="menu-item-price">£2.50</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chips and Curry Sauce</div></div><div class="menu-item-price">£3.50</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Onion Rings</div></div><div class="menu-item-price">£2.50</div></div>
+      </div>
+      <div class="menu-category">
+        <div class="menu-cat-title">3 for £12.50</div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cheesy Nachos</div><div class="menu-item-desc">Melted cheese, salsa, sour cream, jalapeños and nacho cheese sauce</div></div><div class="menu-item-price">£5.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chicken Chunks</div></div><div class="menu-item-price">£5.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chicken Wings</div></div><div class="menu-item-price">£5.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chilli Cheese Nuggets</div></div><div class="menu-item-price">£5.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Mozzarella Sticks</div></div><div class="menu-item-price">£5.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Quorn Vegan Dippers</div><div class="menu-item-desc">Choose a sauce: BBQ, Salsa, Mint yoghurt, Garlic mayo, Sweet chilli, Sour cream</div></div><div class="menu-item-price">£5.00</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAINS -->
+  <div class="menu-panel" id="panel-mains">
+    <div class="menu-cols">
+      <div class="menu-category">
+        <div class="menu-cat-title">2 for £12.50</div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Fish and Chips</div><div class="menu-item-desc">Fresh hand battered fish served with chips and peas</div></div><div class="menu-item-price">£9.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Bangers and Mash</div><div class="menu-item-desc">Juicy sausages served with creamy mash, gravy and peas</div></div><div class="menu-item-price">£8.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Steak and Ale Pie</div><div class="menu-item-desc">Short crust steak and ale pie served with chips, gravy and peas</div></div><div class="menu-item-price">£8.60</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Scampi and Chips</div><div class="menu-item-desc">Golden scampi pieces served with chips and peas</div></div><div class="menu-item-price">£9.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chicken Tikka</div><div class="menu-item-desc">Authentic chicken tikka served with pilau rice, poppadom and a drizzling of mint yoghurt sauce</div></div><div class="menu-item-price">£8.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Vegetable Tikka</div><div class="menu-item-desc">A mixture of aubergine, onions, mushrooms and more, served with pilau rice, poppadom and mint yoghurt sauce</div></div><div class="menu-item-price">£8.00</div></div>
+      </div>
+      <div class="menu-category">
+        <div class="menu-cat-title">&nbsp;</div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Vegetarian Pie</div><div class="menu-item-desc">Short crust pastry filled with sweet potato and leeks in a creamy cheese sauce, served with chips, peas and gravy</div></div><div class="menu-item-price">£8.60</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Beef Lasagne</div><div class="menu-item-desc">Perfectly cooked beef lasagne served with fresh salad of lettuce, red onions, tomatoes and cucumbers</div></div><div class="menu-item-price">£8.60</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Macaroni Cheese</div><div class="menu-item-desc">The creamiest and cheesiest macaroni served with fresh salad of lettuce, red onions, tomatoes and cucumbers</div></div><div class="menu-item-price">£8.60</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Oliver's Chicken</div><div class="menu-item-desc">2 perfectly grilled chicken skewers with BBQ sauce, streaky bacon topped with perfectly grilled cheese, served with chips, peas and grilled tomato</div></div><div class="menu-item-price">£9.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">8oz Gammon</div><div class="menu-item-desc">Beautifully grilled gammon topped with pineapple and egg, served with chips, half a grilled tomato and peas</div></div><div class="menu-item-price">£9.00</div></div>
+      </div>
+    </div>
+    <p class="menu-note">Sauces: Peppercorn £2.50 &middot; Curry sauce £2.00 &middot; Nacho cheese £2.00 &middot; Salsa, sour cream, BBQ, burger sauce, sweet chilli, mint yoghurt and mango chutney £1</p>
+  </div>
+
+  <!-- GRILL -->
+  <div class="menu-panel" id="panel-grill">
+    <div class="menu-cols">
+      <div class="menu-category">
+        <div class="menu-cat-title">From the Grill</div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">8oz Sirloin Steak</div><div class="menu-item-desc">Perfectly cooked sirloin steak served with onion rings, chips, half a grilled tomato and peas</div></div><div class="menu-item-price">£13.50</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">16oz Sirloin Steak</div><div class="menu-item-desc">Perfectly cooked sirloin steak served with onion rings, chips, half a grilled tomato and peas</div></div><div class="menu-item-price">£19.50</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">12oz Gammon</div><div class="menu-item-desc">Beautifully grilled gammon topped with pineapple and egg, served with chips, half a grilled tomato and peas</div></div><div class="menu-item-price">£13.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Mixed Grill</div><div class="menu-item-desc">Straight from the grill — sausage, chicken, gammon, sirloin steak, served with onion rings, chips, half grilled tomato and peas</div></div><div class="menu-item-price">£16.50</div></div>
+      </div>
+    </div>
+    <p class="menu-note">Sauces: Peppercorn £2.50 &middot; Curry sauce £2.00 &middot; Nacho cheese £2.00 &middot; Salsa, sour cream, BBQ, burger sauce, sweet chilli, mint yoghurt and mango chutney £1</p>
+  </div>
+
+  <!-- BURGERS -->
+  <div class="menu-panel" id="panel-burgers">
+    <div class="menu-cols">
+      <div class="menu-category">
+        <div class="menu-cat-title">Our Burgers</div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Nacho Burger</div><div class="menu-item-desc">Spilling out with cheese sauce, tortilla chips, jalapeños and burger cheese</div></div><div class="menu-item-price">£12.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">BBQ Heaven Burger</div><div class="menu-item-desc">Loaded with BBQ, mozzarella cheese and streaky bacon</div></div><div class="menu-item-price">£10.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cheesy Kicker</div><div class="menu-item-desc">Crammed with a hash brown and chilli cheese nuggets, topped with a cheese slice</div></div><div class="menu-item-price">£12.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cheese Burger</div><div class="menu-item-desc">The classic cheese burger with an American cheese slice. Add bacon for an extra 50p</div></div><div class="menu-item-price">£9.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">The Meatless One</div><div class="menu-item-desc">Quarter pounder meat substitute drizzled with our delicious BBQ sauce</div></div><div class="menu-item-price">£9.00</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KIDS -->
+  <div class="menu-panel" id="panel-kids">
+    <div class="menu-cols">
+      <div class="menu-category">
+        <div class="menu-cat-title">Pick a Main</div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Macaroni Cheese</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Fish Fingers</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chicken Nuggets</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Sausage</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Vegan Dippers</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cheese Burger</div></div></div>
+      </div>
+      <div class="menu-category">
+        <div class="menu-cat-title">Choose 2 Sides</div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chips</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Peas</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Corn</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Wraps</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Salad</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Beans</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Coleslaw</div></div></div>
+      </div>
+      <div class="menu-category">
+        <div class="menu-cat-title">Choose a Dessert</div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Warm Brownie</div><div class="menu-item-desc">Served with ice cream</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cookies</div><div class="menu-item-desc">Served with ice cream</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Doughnut</div><div class="menu-item-desc">Topped with ice cream and sprinkles</div></div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">2 Scoops Ice Cream</div><div class="menu-item-desc">With sprinkles</div></div></div>
+      </div>
+    </div>
+    <p class="menu-note">£4.50 Main and Drink &middot; Add a Dessert for £1</p>
+  </div>
+
+  <!-- DESSERTS -->
+  <div class="menu-panel" id="panel-desserts">
+    <div class="menu-cols">
+      <div class="menu-category">
+        <div class="menu-cat-title">Desserts</div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Apple and Berry Crumble</div></div><div class="menu-item-price">£4.50</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Syrup Sponge</div></div><div class="menu-item-price">£4.50</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chocolate Fudge Cake</div><div class="menu-item-desc">Choose between custard, pouring cream or ice cream</div></div><div class="menu-item-price">£5.00</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Vanilla Ice Cream</div><div class="menu-item-desc">With chocolate or raspberry sauce</div></div><div class="menu-item-price">£3.50</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPORTS -->
+<section id="sports">
+  <div class="sports-inner">
+    <div class="sports-content reveal">
+      <p class="section-label">Never Miss A Match</p>
+      <h2 class="section-title">Live Sport Every Week</h2>
+      <p class="sports-text">Pull up a seat and catch all the action live. From Premier League to international rugby, we show it all on our big screens with great food and cold drinks to match.</p>
+      <ul class="sports-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Premier League &amp; Champions League</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Rugby Union &amp; League</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Boxing &amp; UFC</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>And much more</li>
+      </ul>
+    </div>
+    <img class="sports-img reveal" src="barimage.jpeg" alt="Oliver's Bar" loading="lazy">
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-head reveal">
+    <p class="section-label">From The Kitchen</p>
+    <h2 class="section-title">Gallery</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item" onclick="openLB(0)"><img src="food-fish-chips.jpeg" alt="Fish and Chips" loading="lazy"></div>
+    <div class="gallery-item" onclick="openLB(1)"><img src="food-curry-pizza.jpeg" alt="Curry and Flatbread" loading="lazy"></div>
+    <div class="gallery-item" onclick="openLB(2)"><img src="food-meatballs.jpeg" alt="Meatballs" loading="lazy"></div>
+    <div class="gallery-item" onclick="openLB(3)"><img src="food-chicken-parm.jpeg" alt="Chicken Parmigiana" loading="lazy"></div>
+    <div class="gallery-item" onclick="openLB(4)"><img src="food-mixed-grill.jpeg" alt="Mixed Grill" loading="lazy"></div>
+    <div class="gallery-item" onclick="openLB(5)"><img src="food-gammon.jpeg" alt="Gammon and Egg" loading="lazy"></div>
+    <div class="gallery-item" onclick="openLB(6)"><img src="food-steak.jpeg" alt="Steak" loading="lazy"></div>
+    <div class="gallery-item" onclick="openLB(7)"><img src="food-sausage-mash.jpeg" alt="Sausage and Mash" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lb-close" onclick="closeLB()">&times;</button>
+  <button class="lb-prev" onclick="changeLB(-1)">&#8249;</button>
+  <img id="lb-img" src="" alt="Gallery image">
+  <button class="lb-next" onclick="changeLB(1)">&#8250;</button>
+</div>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="reviews-inner reveal">
+    <p class="section-label" style="margin-bottom:2rem;">What People Say</p>
+    <div class="reviews-scores">
+      <div class="review-score">
+        <span class="review-score-platform">Google Reviews</span>
+        <span class="review-score-number">4.9</span>
+        <div class="review-score-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <span class="review-score-count">147 reviews</span>
+      </div>
+      <div class="reviews-divider"></div>
+      <div class="review-score">
+        <span class="review-score-platform">TripAdvisor</span>
+        <span class="review-score-number">4.9</span>
+        <div class="review-score-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <span class="review-score-count">77 reviews</span>
+      </div>
+    </div>
+    <p class="reviews-quote">"Brilliant local sports bar with great food and a fantastic atmosphere. The staff are incredibly friendly and the food is always freshly cooked. Highly recommended."</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-head reveal">
+      <p class="section-label">Come Visit Us</p>
+      <h2 class="section-title">Find Oliver's</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <img class="contact-img" src="exterior.jpeg" alt="Oliver's Sports Bar">
+      <div class="contact-details">
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="contact-detail-text">
+            <h4>Address</h4>
+            <p>1070 Carmarthen Road<br>Fforest-fach, Swansea<br>SA5 4AL</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          <div class="contact-detail-text">
+            <h4>Phone</h4>
+            <a href="tel:01792731092">01792 731092</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div class="contact-detail-text">
+            <h4>Email</h4>
+            <a href="mailto:h.e1401@outlook.com">h.e1401@outlook.com</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="contact-detail-text">
+            <h4>Opening Hours</h4>
+            <p>Tue–Thu &amp; Sun: 12pm–10pm<br>Fri–Sat: 12pm–11pm<br>Monday: Closed</p>
+          </div>
+        </div>
+        <div class="contact-social">
+          <a href="https://facebook.com/oliversrestaurant1" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+          <a href="https://tripadvisor.co.uk" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            TripAdvisor
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.5!2d-3.9621!3d51.6401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486ef9b0a3b3b3b3%3A0x1!2s1070+Carmarthen+Rd%2C+Fforest-fach%2C+Swansea+SA5+4AL!5e0!3m2!1sen!2suk!4v1" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img class="footer-logo" src="logo.jpeg" alt="Oliver's">
+  <p class="footer-copy">&copy; 2025 Oliver's Sports Bar &amp; Restaurant. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#menu">Menu</a>
+    <a href="#sports">Sport</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+function showMenu(tab){
+  document.querySelectorAll('.menu-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.menu-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+tab).classList.add('active');
+  event.target.classList.add('active');
+}
+const lbImgs=[
+  'food-fish-chips.jpeg','food-curry-pizza.jpeg','food-meatballs.jpeg',
+  'food-chicken-parm.jpeg','food-mixed-grill.jpeg','food-gammon.jpeg',
+  'food-steak.jpeg','food-sausage-mash.jpeg'
+];
+let cur=0;
+function openLB(i){cur=i;document.getElementById('lb-img').src=lbImgs[i];document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function closeLB(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+function changeLB(d){cur=(cur+d+lbImgs.length)%lbImgs.length;document.getElementById('lb-img').src=lbImgs[cur];}
+document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLB();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')changeLB(-1);if(e.key==='ArrowRight')changeLB(1);});
+document.getElementById('burger').addEventListener('click',function(){this.classList.toggle('open');document.getElementById('mobMenu').classList.toggle('open');});
+function closeMob(){document.getElementById('burger').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');}
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const bt=document.createElement('button');
+bt.style.cssText='position:fixed;bottom:1.5rem;right:1.5rem;background:var(--teal);border:none;color:var(--white);width:42px;height:42px;border-radius:2px;cursor:pointer;font-size:1.1rem;opacity:0;transition:opacity 0.3s;z-index:500;';
+bt.innerHTML='&#8679;';bt.title='Back to top';
+bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+document.body.appendChild(bt);
+window.addEventListener('scroll',()=>bt.style.opacity=window.scrollY>400?'1':'0');
+</script>
+</body>
+</html>
